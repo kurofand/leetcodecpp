@@ -22,5 +22,13 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum jump 
 
 int main()
 {
+	std::vector<int> nums={2,3,1,1,4};
+
+	auto goal=nums.size()-1;
+	for(int i=goal-1;i>=0;i--)
+		if(nums[i]+i>=goal)
+			goal=i;
+
+	std::cout<<(goal==0)<<std::endl;
 	return 0;
 }
